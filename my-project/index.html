@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To Do List</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+</head>
+<body>
+ <div id="app">
+   <v-app light>
+    <v-toolbar color="white">
+      <v-toolbar-title v-text="title"></v-toolbar-title>
+    </v-toolbar>
+    <v-content>
+      <section>
+        <v-parallax src="assets/hero.jpeg" height="600">
+          <v-layout
+            column
+            align-center
+            justify-center
+            class="white--text"
+          >
+            <img src="assets/vuetify.png" alt="Vuetify.js" height="200">
+            <h1 class="white--text mb-2 display-1 text-center">To do List</h1>
+          </v-layout>
+        </v-parallax>
+      </section>
+
+      <section>
+        <v-layout
+          column
+          wrap
+          class="my-12"
+          align-center
+        >
+          <v-flex xs12 sm4 class="my-4">
+            <div class="text-center">
+              <h2 class="headline">My Todo List</h2>
+              <div class="panel-body">
+                  <form class="todoForm">
+                    <fieldset>
+                      <textarea id="input" class="newTodo form-control"></textarea>
+                      <hr>
+                      <button type="button" class="submitButton" onclick="NuevaTarea()" > 
+                        Post Todo
+                      </button>
+                    </fieldset>
+                  </form>
+                </div>
+                <div class="buttons">
+                    <button class="clearButton btn-info" onclick="desconfirmar()"> 
+                      Clear all Todo's
+                    </button>
+                    <button class="markAllButton btn-success" id="Completo" onclick="confirmar()"> 
+                      Mark all Todo's
+                    </button>
+                    <button class="deleteButton btn-danger" onclick="borrar()"> 
+                      Delete all Todo's
+                    </button>
+                  </div>
+            </div>
+          </v-flex>
+          <v-flex xs12 sm4 class="my-4">
+              <div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h3>List of todo's</h3>
+                    </div>
+                    <div class="panel-body" class="listOfTodos">
+                      <ul id="list">
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+          </v-flex>
+              </v-layout>
+            </v-container>
+          </v-flex>
+        </v-layout>
+      </section>
+      <v-footer color="blue darken-2">
+
+      </v-footer>
+    </v-content>
+  </v-app>
+ </div>
+ <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+ <script type="text/javascript" src="./js/lista.js"></script>  
+ <script>
+   new Vue({
+    el: '#app',
+    vuetify: new Vuetify(),
+    data () {
+      return {
+        title: 'Jesus Lugo A01089769'
+      }
+    }
+  })
+ </script>
+</body>
+</html>
